@@ -1,0 +1,265 @@
+/* Basic Reset & Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6; /* Light grey background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top of the flex container */
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Main Container */
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Limit width for readability */
+    width: 100%;
+    margin: 20px 0; /* Add vertical margin */
+}
+
+/* Headings */
+h1, h2 {
+    text-align: center;
+    color: #007bff; /* Primary blue color */
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: #0056b3;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Form Styling */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="number"],
+select {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in width */
+    font-size: 16px;
+}
+
+/* Buttons */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-bottom: 10px; /* Space between buttons */
+    /* Ensure text is vertically centered even with spinner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Specific button styles */
+#login-btn, #register-btn {
+    width: 48%; /* Adjust for side-by-side */
+    display: inline-flex; /* Use inline-flex for side-by-side with content centering */
+    margin-right: 2%; /* Space between them */
+}
+#register-btn {
+    margin-right: 0; /* No right margin for the last button in the pair */
+}
+#login-btn:last-of-type, #register-btn:last-of-type { /* Adjust for single buttons in case of form changes */
+    margin-bottom: 10px;
+}
+
+.back-btn {
+    background-color: #6c757d; /* Grey for back/secondary buttons */
+    margin-top: 15px;
+}
+.back-btn:hover {
+    background-color: #5a6268;
+}
+
+.remove-btn {
+    background-color: #dc3545; /* Red for delete buttons */
+    margin-top: 10px;
+}
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+/* Checkbox and Radio Styles */
+.days-checkboxes, .checkbox-group {
+    margin-bottom: 15px;
+    padding: 5px 0;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+.days-checkboxes label, .checkbox-group label {
+    display: inline-block; /* Keep labels on same line as checkboxes */
+    margin-left: 5px;
+    margin-bottom: 5px; /* Space out checkbox labels vertically */
+    font-weight: normal;
+}
+.days-checkboxes input[type="checkbox"], .checkbox-group input[type="checkbox"] {
+    width: auto; /* Don't stretch checkboxes */
+    margin-right: 5px;
+}
+
+/* Time Dropdown Layout */
+.time-dropdowns {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.time-dropdowns select {
+    width: 48%; /* Half width for hour/minute */
+    margin-right: 4%; /* Space between them */
+}
+.time-dropdowns select:last-child {
+    margin-right: 0;
+}
+.time-dropdowns span {
+    font-size: 1.2em;
+    margin: 0 5px;
+}
+
+
+/* Messages */
+#auth-message {
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+#auth-message[style*="color: green"] {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+#auth-message[style*="color: red"] {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+
+/* Hidden Class (already in use) */
+.hidden {
+    display: none !important; /* Use !important to ensure it overrides other display properties */
+}
+
+/* Ride List Styling */
+#ride-list,
+#my-offered-rides {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.ride-item {
+    background-color: #e9f0f7; /* Light blue background for the entire card */
+    border: 1px solid #cce5ff; /* Blue border around the entire card */
+    border-radius: 5px;
+    padding: 15px; /* Padding for the content *inside* the card */
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.ride-item p {
+    margin: 8px 0; /* Vertical spacing between each line of information */
+    font-size: 0.95em;
+    padding: 0; /* Ensure no extra padding on paragraphs */
+    /* Ensure no background or border here */
+    background-color: transparent; /* Explicitly ensure no background */
+    border: none; /* Explicitly ensure no border */
+    box-shadow: none; /* Explicitly ensure no shadow */
+}
+
+.ride-item strong {
+    color: #0056b3;
+    display: inline; /* Make strong tag inline (default behavior) */
+    margin-right: 5px; /* Small space after the label */
+}
+
+.ride-item .contact-info {
+    font-style: italic;
+    color: #666;
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px dashed #ddd; /* Only this specific element has a top border */
+}
+
+/* Empty State Message - Target direct children only */
+#ride-list > p,
+#my-offered-rides > p {
+    text-align: center;
+    color: #6c757d;
+    padding: 20px;
+    border: 1px dashed #ddd; /* This border will now ONLY apply to the empty message */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* This background will now ONLY apply to the empty message */
+}
+
+/* --- New: Spinner Animation & Button Loading States --- */
+
+/* Keyframes for the spinning animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Style for the loading spinner itself */
+.loading-spinner {
+    display: inline-block;
+    width: 1em; /* Adjust size relative to font-size */
+    height: 1em; /* Keep it square */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Transparent border for background */
+    border-radius: 50%; /* Make it a circle */
+    border-top-color: #fff; /* White color for the spinning part */
+    animation: spin 0.8s linear infinite; /* Apply the animation */
+    vertical-align: middle; /* Align with text */
+    margin-left: 8px; /* Space between text and spinner */
+}
+
+/* Styles to apply to a button when it's loading */
+button.loading {
+    cursor: not-allowed; /* Change cursor to indicate it's disabled */
+    opacity: 0.8; /* Slightly fade the button */
+    /* The `display: flex; align-items: center; justify-content: center;` on the base button
+       already handles centering both text and spinner. */
+}

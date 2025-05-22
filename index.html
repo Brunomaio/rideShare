@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Ride Share</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Company Ride Share!</h1>
+
+        <div id="auth-page">
+            <h2>Login or Register</h2>
+            <form id="auth-form">
+                <label for="auth-email">Company Email:</label>
+                <input type="email" id="auth-email" placeholder="e.g., your.name@company.com" required>
+                
+                <label for="auth-password">Password:</label>
+                <input type="password" id="auth-password" required>
+                
+                <button type="button" id="login-btn">Login</button>
+                <button type="button" id="register-btn">Register</button>
+                
+                <div id="auth-message"></div>
+            </form>
+        </div>
+
+        <div id="landing-page" class="hidden">
+            <h2>Available Rides</h2>
+            <button id="rider-btn">Find a Ride</button>
+            <button id="driver-btn">Offer a Ride</button>
+            <button id="logout-btn" class="back-btn">Logout</button>
+        </div>
+
+        <div id="rider-page" class="hidden">
+            <h2>Available Rides</h2>
+            <div class="filter-section">
+                <label for="rider-destination-filter">Filter by Destination/Pickup:</label>
+                <input type="text" id="rider-destination-filter" placeholder="e.g., City Centre, Salford">
+            </div>
+            <div id="ride-list">
+                </div>
+            <button class="back-btn">Back to Home</button>
+        </div>
+
+        <div id="driver-page" class="hidden">
+            <h2>Offer a Ride</h2>
+            <form id="driver-form">
+                <label for="driver-name">Your Name:</label>
+                <input type="text" id="driver-name" required>
+
+                <label for="driver-contact">Your Contact Info (e.g., Email, Teams ID):</label>
+                <input type="text" id="driver-contact" placeholder="e.g., your.email@company.com, @your_teams_id" required>
+
+                <label for="driver-destination">General Destination (e.g., South Manchester, City Centre):</label>
+                <input type="text" id="driver-destination" required>
+
+                <label>Days Available (tick all that apply):</label>
+                <div class="days-checkboxes">
+                    <input type="checkbox" id="monday" name="available-days" value="Monday">
+                    <label for="monday">Monday</label><br>
+                    <input type="checkbox" id="tuesday" name="available-days" value="Tuesday">
+                    <label for="tuesday">Tuesday</label><br>
+                    <input type="checkbox" id="wednesday" name="available-days" value="Wednesday">
+                    <label for="wednesday">Wednesday</label><br>
+                    <input type="checkbox" id="thursday" name="available-days" value="Thursday">
+                    <label for="thursday">Thursday</label><br>
+                    <input type="checkbox" id="friday" name="available-days" value="Friday">
+                    <label for="friday">Friday</label><br>
+                    <input type="checkbox" id="saturday" name="available-days" value="Saturday">
+                    <label for="saturday">Saturday</label><br>
+                    <input type="checkbox" id="sunday" name="available-days" value="Sunday">
+                    <label for="sunday">Sunday</label>
+                </div>
+
+                <label>Leaving Home At:</label>
+                <div class="time-dropdowns">
+                    <select id="ride-home-hour"></select>
+                    <span>:</span>
+                    <select id="ride-home-minute"></select>
+                </div>
+
+                <label>Approximate Time of departure from the office:</label>
+                <div class="time-dropdowns">
+                    <select id="ride-office-hour"></select>
+                    <span>:</span>
+                    <select id="ride-office-minute"></select>
+                </div>
+
+                <label for="available-seats">Available Seats:</label>
+                <input type="number" id="available-seats" min="1" max="10" required>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="smoking-allowed">
+                    <label for="smoking-allowed">Smoking allowed in car?</label>
+                </div>
+
+                <label for="sharing-cost">Sharing Cost (optional, e.g., £2.50 per ride/day, free):</label>
+                <input type="text" id="sharing-cost" placeholder="e.g., Free, £3/day">
+
+                <button type="submit">Offer This Ride</button>
+            </form>
+
+            <h3>My Offered Rides</h3>
+            <div id="my-offered-rides">
+                </div>
+            <button class="back-btn">Back to Home</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
